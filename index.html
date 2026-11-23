@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Per-object simulation results for 2,750 tactile reconstructions, with split-level metrics and reference-quality flags.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles.css">
+  <title>Tacflow | Simulation gallery</title>
+  <script src="data.js" defer></script>
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Tacflow</span></div>
+      <span class="archive">Research archive</span>
+      <a class="download" href="metrics.csv" download>Download metrics CSV</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div class="eyebrow">SIMULATED TACTILE RECONSTRUCTION</div>
+      <h1 id="title">Simulation gallery</h1>
+      <p class="protocol">B regression, epoch 850 <span>·</span> 1,024 input points <span>·</span> 96³ query grid</p>
+    </section>
+
+    <nav class="splits" aria-label="Dataset split">
+      <button type="button" data-split="all" aria-pressed="false">All <span>2,750</span></button>
+      <button type="button" data-split="train" aria-pressed="false">Training <span>2,200</span></button>
+      <button type="button" data-split="val" aria-pressed="false">Validation <span>275</span></button>
+      <button type="button" data-split="test" aria-pressed="true">Test <span>275</span></button>
+    </nav>
+    <dl id="summary" class="summary" aria-label="Selected split metrics"></dl>
+    <aside id="anomaly-banner" class="warning">
+      <span class="warning-tag">REFERENCE ISSUE</span>
+      <div><strong>One test reference is out of bounds.</strong>
+      <span>The archived test mean CD is 19.24532; it is not a clean aggregate benchmark.</span></div>
+      <button type="button" id="open-anomaly">Inspect case</button>
+    </aside>
+
+    <section class="results" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div><h2 id="results-title">Inputs and reconstructions</h2><p id="match-count" aria-live="polite"></p></div>
+        <div class="modes" aria-label="View mode">
+          <button type="button" data-mode="grid" aria-pressed="true">Gallery</button>
+          <button type="button" data-mode="table" aria-pressed="false">Table</button>
+        </div>
+      </div>
+      <div class="filters">
+        <label>Search <input type="search" id="search" placeholder="Category or case ID"></label>
+        <label>Category <select id="category"><option value="">All categories</option></select></label>
+        <label>Sort by <select id="sort">
+          <option value="archive">Archive order</option><option value="category">Category (A–Z)</option>
+          <option value="cd">CD (lowest first)</option><option value="f02">F@0.02 (highest first)</option>
+        </select></label>
+      </div>
+      <div id="case-list"></div>
+      <nav class="pagination" aria-label="Result pages">
+        <button type="button" id="prev">Previous</button>
+        <span id="page-label" aria-live="polite"></span>
+        <button type="button" id="next">Next</button>
+      </nav>
+    </section>
+    <details class="methods">
+      <summary>Protocol and limitations</summary>
+      <div>
+        <p>All objects use the same B checkpoint (epoch 850, seed 42), selected by development CD. The input view shows all 1,024 points actually fed to the model, balanced over 40 patches drawn from four saved simulation groups. The prediction is the mesh extracted from a fixed 96³ field. Input and prediction share the same orthographic view and scale within each case; the scale may differ between objects.</p>
+        <p>CD is the sum of the two mean nearest-surface distances, not squared, in normalized coordinates. F-scores use thresholds 0.01 and 0.02. Each surface evaluation sampled 10,000 points.</p>
+        <p>Training figures are in-sample; validation is reused development data. The test tab contains the original test partition, not S0. Cases sharing shape IDs across historical splits are flagged. One invalid test reference is retained in the archive and contributes to the raw summary. The gallery contains images and metrics, not source CAD, point coordinates or weights.</p>
+      </div>
+    </details>
+    <footer><span>Tacflow simulation archive</span><span>2,750 cases · 55 categories</span></footer>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="dialog-head">
+      <div><div id="detail-split" class="eyebrow"></div><h2 id="detail-title"></h2></div>
+      <form method="dialog"><button aria-label="Close case details" class="close">×</button></form>
+    </div>
+    <div class="pair-labels"><span>Tactile input</span><span>Predicted mesh</span></div>
+    <img id="detail-image" alt="">
+    <p class="detail-note" id="detail-input"></p>
+    <dl id="detail-metrics" class="detail-metrics"></dl>
+    <p class="case-code" id="detail-id"></p>
+    <p class="detail-note" id="detail-overlap" hidden></p>
+    <p class="detail-note flagged" id="detail-anomaly" hidden>The reference surface is out of bounds (9,940 of 10,000 reference samples outside [−1, 1]); the tactile input and prediction remain in bounds. The archived metrics are shown for traceability, not treated as valid evidence for this case.</p>
+  </dialog>
+  <noscript>This gallery requires JavaScript. The <a href="metrics.csv">metrics CSV</a> is available without it.</noscript>
+</body>
+</html>
