@@ -6,7 +6,8 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0}
-#inline-mesh{display:block;border:1px solid var(--line);width:100%;height:clamp(300px,44vh,520px);margin:12px 0;background:var(--wash)}
+.detail-viewers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}
+.detail-viewers iframe{display:block;border:1px solid var(--line);width:100%;height:clamp(260px,42vh,440px);background:var(--wash)}
 button,input,select{font:inherit}
 button,a,input,select,summary{-webkit-tap-highlight-color:transparent}
 button{cursor:pointer}
@@ -84,7 +85,6 @@ dialog::backdrop{background:#18303990}
 .dialog-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:13px;gap:12px}
 .dialog-head h2{text-transform:capitalize}
 .close{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:5px;width:34px;height:34px;font-size:1.26rem}
-#detail-image{width:100%;height:auto;aspect-ratio:704/256;object-fit:contain;background:#eff5f5;display:block}
 .detail-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
 .case-code{font:.85rem ui-monospace,monospace;overflow-wrap:anywhere;color:var(--muted)}
 .detail-note{margin-top:10px;color:var(--muted);font-size:.88rem}

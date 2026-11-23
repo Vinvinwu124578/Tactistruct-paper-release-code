@@ -12,8 +12,9 @@
   #mesh-scene{width:100%;height:min(70vh,760px);background:#f2f7f6;margin-top:12px;display:block;touch-action:none;cursor:grab}
   #mesh-status{color:#51636a}
   .embedded main{width:100%;padding:8px;display:grid;height:100vh;grid-template-rows:auto auto minmax(0,1fr);gap:4px}
-  .embedded .mesh-head{margin:0}
-  .embedded .mesh-head h1{font-size:1rem}
+  .embedded .mesh-head{margin:0;justify-content:flex-end}
+  .embedded .mesh-head h1{display:none}
+  .embedded #mesh-status{font-size:.75rem;margin:2px 0}
   .embedded #input-link{display:none}
   .embedded #mesh-scene{height:100%;margin:0}
 </style>

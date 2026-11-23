@@ -78,11 +78,13 @@
       <form method="dialog"><button aria-label="Close case details" class="close">×</button></form>
     </div>
     <div class="pair-labels"><span>Tactile input</span><span>Predicted mesh</span></div>
-    <img id="detail-image" alt="">
+    <div class="detail-viewers">
+      <iframe id="inline-points" title="Interactive tactile input"></iframe>
+      <iframe id="inline-mesh" title="Interactive reconstructed mesh"></iframe>
+    </div>
     <p class="detail-note" id="detail-input"></p>
     <dl id="detail-metrics" class="detail-metrics"></dl>
-    <iframe id="inline-mesh" title="Interactive reconstructed mesh"></iframe>
-    <p><a id="view-points" target="_blank" rel="noopener">View 3D input points</a></p><p class="case-code" id="detail-id"></p>
+    <p class="case-code" id="detail-id"></p>
     <p class="detail-note" id="detail-overlap" hidden></p>
     <p class="detail-note flagged" id="detail-anomaly" hidden>The reference surface is out of bounds (9,940 of 10,000 reference samples outside [−1, 1]); the tactile input and prediction remain in bounds. The archived metrics are shown for traceability, not treated as valid evidence for this case.</p>
   </dialog>

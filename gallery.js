@@ -50,13 +50,10 @@ function syncUrl(item) {
 function openCase(item) {
   el('detail-title').textContent=item.category;
   el('detail-split').textContent=names[item.split].toUpperCase()+' / SAVED CASE';
-  const pointLink=el('view-points');
-  pointLink.href='point-cloud.html?case='+encodeURIComponent(item.id);
-  el('inline-mesh').src='mesh.html?embed=1&case='+encodeURIComponent(item.id);
+  const query='?embed=1&case='+encodeURIComponent(item.id);
+  el('inline-points').src='point-cloud.html'+query;
+  el('inline-mesh').src='mesh.html'+query;
   el('detail-id').textContent=`Case ${item.id} · ${integer.format(item.f)} triangles`;
-  const image=el('detail-image');
-  image.src=`comparisons/${item.id}.webp`;
-  image.alt=`Tactile input and predicted ${item.category} mesh in the same frame`;
   el('detail-input').textContent=`Input: ${integer.format(item.input.points)} points, ${item.input.patches} patches · simulation groups ${item.input.groups.join(', ')} (zero-based).`;
   el('detail-metrics').replaceChildren(...[
     ['CD ↓',cd(item.cd)],['F@0.01 ↑',pct(item.f01)],['F@0.02 ↑',pct(item.f02)],
@@ -153,6 +150,9 @@ for(const [id,step] of [['prev',-1],['next',1]]) el(id).addEventListener('click'
   state.page+=step;show();el('results-title').scrollIntoView({block:'start'});
 });
 el('open-anomaly').addEventListener('click',()=>openCase(byId.get(anomaly)));
-dialog.addEventListener('close',()=>{el('inline-mesh').removeAttribute('src');syncUrl();});
+dialog.addEventListener('close',()=>{
+  for(const id of ['inline-points','inline-mesh'])el(id).removeAttribute('src');
+  syncUrl();
+});
 splitTo(state.split);
 if (byId.has(query.get('case'))) openCase(byId.get(query.get('case')));
