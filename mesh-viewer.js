@@ -2,7 +2,9 @@ import * as THREE from './vendor/three.module.js';
 
 const status=document.querySelector('#mesh-status');
 const canvas=document.querySelector('#mesh-scene');
-const id=new URLSearchParams(location.search).get('case');
+const params=new URLSearchParams(location.search);
+const id=params.get('case');
+if(params.get('embed')==='1')document.documentElement.classList.add('embedded');
 const format=new Intl.NumberFormat('en');
 
 function unpack(raw,offset,n,vertex){

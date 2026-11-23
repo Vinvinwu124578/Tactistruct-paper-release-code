@@ -6,6 +6,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0}
+#inline-mesh{display:block;border:1px solid var(--line);width:100%;height:clamp(300px,44vh,520px);margin:12px 0;background:var(--wash)}
 button,input,select{font:inherit}
 button,a,input,select,summary{-webkit-tap-highlight-color:transparent}
 button{cursor:pointer}
