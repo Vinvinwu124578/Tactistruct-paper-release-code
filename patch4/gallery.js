@@ -89,8 +89,9 @@ function card(item) {
   image.width=704;
   image.height=256;
   image.loading='lazy';
+  image.decoding='async';
   image.alt=`Tactile input and predicted ${item.category} surface`;
-  image.src=`comparisons/${item.id}.avif`;
+  loadPatchImage(image,item);
   const labels=node('span','pair-labels');
   labels.append(node('span','','Tactile input'),node('span','',item.mesh?'Predicted mesh':'No zero crossing'));
   const box=node('span','case-info');
