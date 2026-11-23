@@ -59,8 +59,9 @@ function openCase(item) {
   el('detail-split').textContent=names[item.split].toUpperCase()+' / SAVED CASE';
   el('detail-id').textContent=`Case ${item.id} · ${integer.format(item.f)} triangles`;
   const image=el('detail-image');
-  image.previousElementSibling.lastElementChild.textContent=item.mesh?'Predicted mesh':'No zero crossing';
+  el('detail-mesh-label').textContent=item.mesh?'Predicted mesh':'No zero crossing';
   setPatchDetailImage(image,item);
+  setPatchDetailViewers(item);
   image.alt=`Tactile input and predicted ${item.category} mesh in the same frame`;
   el('detail-input').textContent=`Input: ${integer.format(item.input.points)} points, ${item.input.patches} patches · simulation groups ${item.input.groups.join(', ')} (zero-based).`;
   for (const [id,color] of item.input.legend || []) {

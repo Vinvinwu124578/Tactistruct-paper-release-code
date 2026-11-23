@@ -1,4 +1,5 @@
 import * as THREE from './vendor/three.module.js';
+import {patchAssets} from './patch-assets.js';
 
 const status=document.querySelector('#mesh-status');
 const canvas=document.querySelector('#mesh-scene');
@@ -30,11 +31,15 @@ async function request(url){
 
 async function start(){
   if(!/^[a-f0-9]{24}$/.test(id))throw Error('Unknown case');
-  document.querySelector('#input-link').href='point-cloud.html?case='+id;
-  const index=await (await request('mesh-index.json')).json();
+  const mode=params.get('mode');
+  const base=mode?patchAssets(mode):'';
+  document.querySelector('#input-link').href=mode
+    ? 'patch-points.html?mode='+mode+'&case='+id
+    : 'point-cloud.html?case='+id;
+  const index=await (await request(base+'mesh-index.json')).json();
   if(!Object.hasOwn(index,id))throw Error('No 3D mesh published for this case');
   const entry=index[id];
-  const response=await request('meshes/'+id+'.mesh.gz');
+  const response=await request(base+'meshes/'+id+'.mesh.gz');
   const zipped=await response.arrayBuffer();
   const buffer=await new Response(new Blob([zipped]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
   const raw=new Uint8Array(buffer), header=new DataView(buffer);

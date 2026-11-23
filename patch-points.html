@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tacflow | Tactile point cloud</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  main{display:grid;width:100%;height:100dvh;grid-template-rows:auto auto minmax(0,1fr);gap:4px;padding:8px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  header h1{font-size:1rem}
+  header button,header a{font:inherit;border:1px solid #afc0c1;border-radius:5px;background:#fff;color:#1c5d60;padding:5px 10px;text-decoration:none}
+  #point-scene{width:100%;height:100%;min-height:0;background:#f2f7f6;display:block;touch-action:none;cursor:grab}
+  #point-status{color:#51636a;font-size:.75rem;margin:2px 0}
+  .embedded header{justify-content:flex-end}
+  .embedded h1,.embedded #download{display:none}
+</style>
+<main>
+  <header>
+    <h1>Tactile point cloud</h1>
+    <a id="download" hidden download>Download PLY</a>
+    <button type="button" id="reset" title="Reset view" aria-label="Reset view">&#8634;</button>
+  </header>
+  <p id="point-status" role="status">Loading point cloud</p>
+  <canvas id="point-scene" tabindex="0" aria-label="Interactive tactile point cloud"></canvas>
+</main>
+<script type="module" src="patch-point-viewer.js"></script>
+</html>

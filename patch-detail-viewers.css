@@ -1,0 +1,5 @@
+.patch-viewers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}
+.patch-viewers iframe{display:block;border:1px solid var(--line);width:100%;height:clamp(260px,42vh,440px);background:var(--wash)}
+details.detail-hd{margin:10px 0;padding:0}
+.detail-hd summary{cursor:pointer;font-weight:650}
+.detail-hd[open] summary{margin-bottom:6px}

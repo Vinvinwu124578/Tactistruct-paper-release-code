@@ -20,3 +20,14 @@ function setPatchDetailImage(image, item) {
   };
   image.src = original;
 }
+
+function setPatchDetailViewers(item){
+  const mode=document.querySelector('main > .inputs [aria-current="page"]').dataset.inputMode;
+  const query='?'+new URLSearchParams({mode,case:item.id,embed:'1'});
+  document.getElementById('inline-points').src='../patch-points.html'+query;
+  document.getElementById('inline-mesh').src='../mesh.html'+query;
+}
+
+document.getElementById('detail').addEventListener('close',()=>{
+  for(const id of ['inline-points','inline-mesh'])document.getElementById(id).removeAttribute('src');
+});

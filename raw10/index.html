@@ -6,6 +6,7 @@
   <meta name="description" content="Per-object simulation results for 2,750 tactile reconstructions, with split-level metrics and reference-quality flags.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../patch-detail-viewers.css">
   <title>Tacflow | Simulation gallery</title>
   <script src="data.js" defer></script>
   <script src="../patch-detail-image.js" defer></script>
@@ -82,10 +83,17 @@
       <div><div id="detail-split" class="eyebrow"></div><h2 id="detail-title"></h2></div>
       <form method="dialog"><button aria-label="Close case details" class="close">×</button></form>
     </div>
-    <div class="pair-labels"><span>Tactile input</span><span>Predicted mesh</span></div>
-    <img id="detail-image" alt="">
-    <a id="detail-full-image" href="" target="_blank" rel="noopener" hidden>Open full-size image</a>
-    <p id="detail-image-warning" class="detail-note" role="status" hidden>Full-size image unavailable. Showing the preview.</p>
+    <div class="pair-labels"><span>Tactile input</span><span id="detail-mesh-label">Predicted mesh</span></div>
+    <div class="patch-viewers">
+      <iframe id="inline-points" title="Interactive tactile input"></iframe>
+      <iframe id="inline-mesh" title="Interactive reconstructed mesh"></iframe>
+    </div>
+    <details class="detail-hd">
+      <summary>Full-size comparison image</summary>
+      <img id="detail-image" alt="">
+      <a id="detail-full-image" href="" target="_blank" rel="noopener" hidden>Open full-size image</a>
+      <p id="detail-image-warning" class="detail-note" role="status" hidden>Full-size image unavailable. Showing the preview.</p>
+    </details>
     <p class="detail-note" id="detail-input"></p><nav class="inputs detail-inputs" id="detail-protocols" aria-label="Compare this case"></nav>
     <dl id="detail-metrics" class="detail-metrics"></dl>
     <p class="case-code" id="detail-id"></p>
