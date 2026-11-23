@@ -60,7 +60,7 @@ function openCase(item) {
   el('detail-id').textContent=`Case ${item.id} · ${integer.format(item.f)} triangles`;
   const image=el('detail-image');
   image.previousElementSibling.lastElementChild.textContent=item.mesh?'Predicted mesh':'No zero crossing';
-  image.src=`comparisons/${item.id}.avif`;
+  setPatchDetailImage(image,item);
   image.alt=`Tactile input and predicted ${item.category} mesh in the same frame`;
   el('detail-input').textContent=`Input: ${integer.format(item.input.points)} points, ${item.input.patches} patches · simulation groups ${item.input.groups.join(', ')} (zero-based).`;
   for (const [id,color] of item.input.legend || []) {
