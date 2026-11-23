@@ -9,3 +9,7 @@ experimental logs, or unpublished patch-run results are included.
 
 The interactive mesh view loads each case's predicted vertices and triangle
 indices on demand. The browser verifies the decoded geometry against its digest.
+
+The 4-patch and 10-raw-patch protocols each cover the same 2,750 cases.
+These two modes publish compressed comparison previews and per-case metrics;
+their underlying 3D assets are not included.

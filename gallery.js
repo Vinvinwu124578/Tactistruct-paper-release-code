@@ -48,6 +48,14 @@ function syncUrl(item) {
 }
 
 function openCase(item) {
+  const links = document.querySelectorAll('main > .inputs [data-input-mode]');
+  el('detail-protocols').replaceChildren(...Array.from(links, original=>{
+    const link=original.cloneNode(true), url=new URL(original.href);
+    url.searchParams.set('split',item.split);
+    url.searchParams.set('case',item.id);
+    link.href=url.href;
+    return link;
+  }));
   el('detail-title').textContent=item.category;
   el('detail-split').textContent=names[item.split].toUpperCase()+' / SAVED CASE';
   const query='?embed=1&case='+encodeURIComponent(item.id);

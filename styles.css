@@ -28,6 +28,11 @@ h1,h2,p{margin:0}
 h1{font-size:2.65rem;line-height:1.12;margin:4px 0 9px}
 .protocol{color:var(--muted);font-size:.94rem}
 .protocol span{padding-inline:6px;color:#759399}
+.inputs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:6px}
+.inputs a{display:flex;align-items:baseline;gap:8px;padding:6px 10px;border:1px solid var(--line);border-radius:5px;text-decoration:none;font-size:.9rem;font-weight:670}
+.inputs a[aria-current=page]{color:#fff;background:var(--teal);border-color:var(--teal)}
+.inputs a span{font-size:.82rem;font-weight:460}
+.detail-inputs{margin:10px 0}
 .splits{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
 .splits button,.modes button{border:0;background:none;color:var(--muted);font-weight:650}
 .splits button{padding:10px 14px;border-bottom:3px solid transparent}

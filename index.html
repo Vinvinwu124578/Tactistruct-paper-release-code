@@ -25,6 +25,11 @@
       <p class="protocol">B regression, epoch 850 <span>·</span> 1,024 input points <span>·</span> 96³ query grid</p>
     </section>
 
+    <nav class="inputs" aria-label="Tactile input protocol">
+      <a href="./" data-input-mode="balanced40" aria-current="page">40 patches<span>1,024 points</span></a>
+      <a href="patch4/index.html" data-input-mode="patch4">4 patches<span>1,024 points</span></a>
+      <a href="raw10/index.html" data-input-mode="raw10">10 raw patches<span>30,000 points</span></a>
+    </nav>
     <nav class="splits" aria-label="Dataset split">
       <button type="button" data-split="all" aria-pressed="false">All <span>2,750</span></button>
       <button type="button" data-split="train" aria-pressed="false">Training <span>2,200</span></button>
@@ -83,6 +88,7 @@
       <iframe id="inline-mesh" title="Interactive reconstructed mesh"></iframe>
     </div>
     <p class="detail-note" id="detail-input"></p>
+    <nav class="inputs detail-inputs" id="detail-protocols" aria-label="Compare this case"></nav>
     <dl id="detail-metrics" class="detail-metrics"></dl>
     <p class="case-code" id="detail-id"></p>
     <p class="detail-note" id="detail-overlap" hidden></p>
