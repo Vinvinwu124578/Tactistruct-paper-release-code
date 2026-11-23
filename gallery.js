@@ -50,6 +50,8 @@ function syncUrl(item) {
 function openCase(item) {
   el('detail-title').textContent=item.category;
   el('detail-split').textContent=names[item.split].toUpperCase()+' / SAVED CASE';
+  const pointLink=el('view-points');
+  pointLink.href='point-cloud.html?case='+encodeURIComponent(item.id);
   el('detail-id').textContent=`Case ${item.id} · ${integer.format(item.f)} triangles`;
   const image=el('detail-image');
   image.src=`comparisons/${item.id}.webp`;

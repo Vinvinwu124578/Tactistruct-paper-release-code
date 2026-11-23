@@ -67,7 +67,7 @@
       <div>
         <p>All objects use the same B checkpoint (epoch 850, seed 42), selected by development CD. The input view shows all 1,024 points actually fed to the model, balanced over 40 patches drawn from four saved simulation groups. The prediction is the mesh extracted from a fixed 96³ field. Input and prediction share the same orthographic view and scale within each case; the scale may differ between objects.</p>
         <p>CD is the sum of the two mean nearest-surface distances, not squared, in normalized coordinates. F-scores use thresholds 0.01 and 0.02. Each surface evaluation sampled 10,000 points.</p>
-        <p>Training figures are in-sample; validation is reused development data. The test tab contains the original test partition, not S0. Cases sharing shape IDs across historical splits are flagged. One invalid test reference is retained in the archive and contributes to the raw summary. The gallery contains images and metrics, not source CAD, point coordinates or weights.</p>
+        <p>Training figures are in-sample; validation is reused development data. The test tab contains the original test partition, not S0. Cases sharing shape IDs across historical splits are flagged. One invalid test reference is retained in the archive and contributes to the raw summary. The gallery contains images and metrics, plus the sampled model-input XYZ, not source CAD, complete touch archives, or weights.</p>
       </div>
     </details>
     <footer><span>Tacflow simulation archive</span><span>2,750 cases · 55 categories</span></footer>
@@ -81,7 +81,7 @@
     <img id="detail-image" alt="">
     <p class="detail-note" id="detail-input"></p>
     <dl id="detail-metrics" class="detail-metrics"></dl>
-    <p class="case-code" id="detail-id"></p>
+    <p><a id="view-points" target="_blank" rel="noopener">View 3D input points</a></p><p class="case-code" id="detail-id"></p>
     <p class="detail-note" id="detail-overlap" hidden></p>
     <p class="detail-note flagged" id="detail-anomaly" hidden>The reference surface is out of bounds (9,940 of 10,000 reference samples outside [−1, 1]); the tactile input and prediction remain in bounds. The archived metrics are shown for traceability, not treated as valid evidence for this case.</p>
   </dialog>
