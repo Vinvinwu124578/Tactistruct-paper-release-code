@@ -6,3 +6,6 @@ One out-of-bounds test reference is explicitly flagged; the measured result is r
 
 Raster previews, per-case metrics and the 1,024 model-input XYZ points are distributed. No raw CAD, weights,
 experimental logs, or unpublished patch-run results are included.
+
+The interactive mesh view loads each case's predicted vertices and triangle
+indices on demand. The browser verifies the decoded geometry against its digest.
