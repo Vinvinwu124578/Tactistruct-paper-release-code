@@ -1,0 +1,30 @@
+.tilt-brand { color: var(--ink); text-decoration: none; }
+.tilt-page .intro { padding-bottom: 20px; }
+.tilt-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; margin-bottom: 13px; }
+.tilt-angles { display: flex; flex-wrap: wrap; padding: 2px; border: 1px solid var(--line); border-radius: 6px; }
+.tilt-angles button { min-width: 49px; min-height: 36px; padding: 3px 8px; color: var(--teal); font-weight: 650; background: #fff; border: 0; border-radius: 4px; }
+.tilt-angles button[aria-pressed=true] { color: #fff; background: var(--teal); }
+.tilt-angles button:hover:not([aria-pressed=true]) { background: #eaf3f2; }
+.tilt-reset { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--teal); }
+.tilt-reset:hover { background: #eaf3f2; }
+#tilt-status { font-size: .86rem; color: var(--muted); }
+.tilt-views { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; border-top: 1px solid var(--line); padding-top: 14px; }
+.tilt-view h2 { font-size: 1.02rem; margin-bottom: 8px; }
+.tilt-view .viewport { position: relative; aspect-ratio: 5/4; background: var(--wash); border: 1px solid var(--line); }
+.tilt-view canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+.tilt-view canvas:active { cursor: grabbing; }
+.tilt-view canvas:focus-visible { outline-offset: -3px; }
+.view-value { min-height: 36px; padding-top: 6px; font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+#no-surface { position: absolute; inset: 38% 12% auto; text-align: center; color: var(--muted); background: #f2f7f6; }
+.tilt-results { margin: 24px 0; }
+.tilt-results .table-wrap { margin-top: 11px; }
+#tilt-table tr[aria-current=true] { background: #eaf3f2; }
+@media (max-width: 760px) {
+  .tilt-views { grid-template-columns: 1fr; gap: 12px; }
+  .tilt-view .viewport { aspect-ratio: 5/4; }
+  .tilt-page .intro { padding-top: 22px; }
+}
+@media (max-width: 450px) {
+  .masthead-inner, .tilt-page { width: calc(100% - 32px); }
+  .tilt-angles button { min-width: 43px; }
+}
