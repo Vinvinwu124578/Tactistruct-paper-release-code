@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse five simulated tilt angles for all 275 original Tacflow test objects.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tacflow | Test set pose tilt</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../pose-tilt/tilt.css">
+  <link rel="stylesheet" href="pose-test.css">
+  <script type="module" src="pose-test.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand tilt-brand" href="../"><span class="brand-mark" aria-hidden="true"></span>Tacflow</a>
+      <a class="download" href="../">Simulation gallery</a>
+    </div>
+  </header>
+  <main class="tilt-page test-pose-page">
+    <section class="intro" aria-labelledby="title">
+      <div class="eyebrow">ORIGINAL TEST SPLIT</div>
+      <h1 id="title">Test set pose tilt</h1>
+      <p class="protocol">275 objects <span>&middot;</span> B regression, epoch 850 <span>&middot;</span> 4 patches, 1,024 points <span>&middot;</span> 96&sup3; grid</p>
+    </section>
+    <aside class="warning pose-warning">
+      <div><strong>One reference CAD is out of bounds.</strong> <span>Its inputs and predictions remain available; its scores are not comparable to the other cases.</span></div>
+      <button type="button" id="open-reference-issue">Inspect case</button>
+    </aside>
+    <div class="pose-picker">
+      <label>Find a case<input id="query" type="search" placeholder="Category or case ID"></label>
+      <label>Test object<select id="case-select"></select></label>
+    </div>
+    <div class="tilt-toolbar">
+      <div class="tilt-angles" role="group" aria-label="Tilt about model X">
+        <button type="button" data-angle="0" aria-pressed="false">0&deg;</button>
+        <button type="button" data-angle="15" aria-pressed="false">15&deg;</button>
+        <button type="button" data-angle="30" aria-pressed="false">30&deg;</button>
+        <button type="button" data-angle="45" aria-pressed="false">45&deg;</button>
+        <button type="button" data-angle="60" aria-pressed="false">60&deg;</button>
+      </div>
+      <button class="tilt-reset" type="button" aria-label="Reset camera" title="Reset camera">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 1 9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+      </button>
+      <span id="tilt-status" role="status" aria-live="polite">Loading test cases</span>
+    </div>
+    <p id="case-reference-warning" class="warning" hidden></p>
+    <section class="tilt-views" aria-label="Synchronized 3D comparison">
+      <section class="tilt-view">
+        <h2>Tactile input</h2>
+        <div class="viewport"><canvas tabindex="0" aria-label="Interactive tactile input"></canvas></div>
+        <p id="input-score" class="view-value"></p>
+      </section>
+      <section class="tilt-view">
+        <h2>Predicted mesh</h2>
+        <div class="viewport"><canvas tabindex="0" aria-label="Interactive predicted mesh"></canvas></div>
+        <p id="direct-score" class="view-value"></p>
+      </section>
+    </section>
+    <section class="tilt-results" aria-labelledby="summary-title">
+      <h2 id="summary-title">Test split summary</h2>
+      <div class="table-wrap">
+        <table aria-label="Test results, including and excluding the invalid reference">
+          <thead><tr><th scope="col">Tilt</th><th scope="col">CD &darr; (valid 274)</th><th scope="col">F@0.02 &uarr; (valid 274)</th><th scope="col">CD &darr; (all 275)</th><th scope="col">F@0.02 &uarr; (all 275)</th><th scope="col">Input outside grid</th><th scope="col">Mesh failures</th></tr></thead>
+          <tbody id="tilt-table"></tbody>
+        </table>
+      </div>
+      <details class="methods">
+        <summary>Protocol and limitations</summary>
+        <div><p>For each object, the same four archived simulation patches were rotated about the normalized object origin around +X. The model received those rotated points directly, without pose correction or rescaling. The prediction was rotated back only for scoring.</p>
+          <p>The 0&deg; row reuses the upright results. CD is the sum of mean nearest-surface distances in normalized coordinates. The full mean includes the out-of-bounds reference; the valid-reference mean excludes only that case. No S0, reference CAD or model weights are included.</p></div>
+      </details>
+    </section>
+    <footer><span>Tacflow simulation archive</span><span>275 original test objects &middot; 1,375 predictions</span></footer>
+  </main>
+</body>
+</html>
