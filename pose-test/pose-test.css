@@ -1,5 +1,8 @@
 .pose-picker { display: grid; grid-template-columns: minmax(170px,.65fr) minmax(0,1.35fr); gap: 10px 16px; margin: 12px 0; }
 .pose-picker label { min-width: 0; color: var(--muted); font-size: .86rem; font-weight: 620; }
+.pose-inputs { display: inline-flex; gap: 3px; max-width: 100%; margin-top: 12px; }
+.pose-inputs button { flex: 1 1 132px; min-height: 50px; padding-inline: 12px; white-space: nowrap; }
+.pose-inputs small { display: block; font-size: .72rem; font-weight: 450; }
 .pose-warning { flex-wrap: wrap; }
 .pose-warning div { flex: 1 1 420px; }
 .test-pose-page .tilt-views { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -7,6 +10,8 @@
 .test-pose-page .tilt-results .table-wrap { max-width: 100%; }
 #case-reference-warning { margin-bottom: 12px; }
 @media (max-width: 660px) {
+  .pose-inputs { display: flex; }
+  .pose-inputs button { padding-inline: 5px; flex-basis: 90px; min-height: 56px; font-size: .87rem; white-space: normal; }
   .pose-picker,.test-pose-page .tilt-views { grid-template-columns: 1fr; }
   .test-pose-page .viewport { aspect-ratio: 5/4; }
 }

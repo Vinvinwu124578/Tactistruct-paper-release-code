@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Browse five simulated tilt angles for all 275 original Tacflow test objects.">
+  <meta name="description" content="Compare five simulated tilt angles under three tactile input protocols for all 275 original Tacflow test objects.">
   <meta name="robots" content="noindex, nofollow">
   <title>Tacflow | Test set pose tilt</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../pose-tilt/tilt.css">
-  <link rel="stylesheet" href="pose-test.css">
-  <script type="module" src="pose-test.js"></script>
+  <link rel="stylesheet" href="pose-test.css?v=protocols">
+  <script type="module" src="pose-test.js?v=protocols"></script>
 </head>
 <body>
   <header class="masthead">
@@ -22,12 +22,17 @@
     <section class="intro" aria-labelledby="title">
       <div class="eyebrow">ORIGINAL TEST SPLIT</div>
       <h1 id="title">Test set pose tilt</h1>
-      <p class="protocol">275 objects <span>&middot;</span> B regression, epoch 850 <span>&middot;</span> 4 patches, 1,024 points <span>&middot;</span> 96&sup3; grid</p>
+      <p class="protocol">275 objects <span>&middot;</span> B regression, epoch 850 <span>&middot;</span> 96&sup3; grid</p>
     </section>
     <aside class="warning pose-warning">
       <div><strong>One reference CAD is out of bounds.</strong> <span>Its inputs and predictions remain available; its scores are not comparable to the other cases.</span></div>
       <button type="button" id="open-reference-issue">Inspect case</button>
     </aside>
+    <div class="pose-inputs tilt-angles" role="group" aria-label="Input protocol">
+      <button type="button" data-mode="patch4" aria-pressed="false">4 patches <small>1,024 points</small></button>
+      <button type="button" data-mode="balanced40" aria-pressed="false">40 patches <small>1,024 points</small></button>
+      <button type="button" data-mode="raw10" aria-pressed="false">10 raw patches <small>30,000 points</small></button>
+    </div>
     <div class="pose-picker">
       <label>Find a case<input id="query" type="search" placeholder="Category or case ID"></label>
       <label>Test object<select id="case-select"></select></label>
@@ -68,11 +73,12 @@
       </div>
       <details class="methods">
         <summary>Protocol and limitations</summary>
-        <div><p>For each object, the same four archived simulation patches were rotated about the normalized object origin around +X. The model received those rotated points directly, without pose correction or rescaling. The prediction was rotated back only for scoring.</p>
+        <div><p>Within each protocol, the saved input points were rotated about the normalized object origin around +X. The model received those rotated points directly, without pose correction or rescaling. The prediction was rotated back only for scoring.</p>
+          <p>The 4- and 40-patch inputs are balanced samples of 1,024 points. The raw ten-patch input retains all 30,000 points. The 40-patch cloud uses one color because the archive does not contain per-point patch IDs.</p>
           <p>The 0&deg; row reuses the upright results. CD is the sum of mean nearest-surface distances in normalized coordinates. The full mean includes the out-of-bounds reference; the valid-reference mean excludes only that case. No S0, reference CAD or model weights are included.</p></div>
       </details>
     </section>
-    <footer><span>Tacflow simulation archive</span><span>275 original test objects &middot; 1,375 predictions</span></footer>
+    <footer><span>Tacflow simulation archive</span><span>275 test objects &middot; 3 protocols &middot; 4,125 predictions</span></footer>
   </main>
 </body>
 </html>
