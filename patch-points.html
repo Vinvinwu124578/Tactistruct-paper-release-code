@@ -9,17 +9,17 @@
   main{display:grid;width:100%;height:100dvh;grid-template-rows:auto auto minmax(0,1fr);gap:6px;padding:16px}
   header{display:flex;align-items:center;gap:8px}
   header h1{margin-right:auto;font-size:1.25rem;letter-spacing:-.015em}
-  header button,header a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 14px;border:1px solid var(--line-strong);border-radius:999px;background:#fff;color:var(--teal);font-size:.86rem;font-weight:600;text-decoration:none;box-shadow:var(--shadow-sm)}
+  header button,header a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 14px;border:1px solid var(--line-strong);border-radius:var(--radius);background:#fff;color:var(--teal);font-size:.86rem;font-weight:600;text-decoration:none;box-shadow:var(--shadow-sm)}
   header button{padding:0;font-size:1.05rem}
   header button:hover,header a:hover{border-color:var(--teal)}
-  #point-scene{width:100%;height:100%;min-height:0;border-radius:16px;background:var(--wash);display:block;touch-action:none;cursor:grab}
+  #point-scene{width:100%;height:100%;min-height:0;border-radius:10px;background:var(--wash);display:block;touch-action:none;cursor:grab}
   #point-scene:active{cursor:grabbing}
   #point-status{margin:0 0 4px;color:var(--muted);font-size:.85rem}
   html.embedded,.embedded body{background:var(--wash)}
   .embedded main{position:relative;padding:0;gap:0;grid-template-rows:minmax(0,1fr) auto}
   .embedded header{position:absolute;top:8px;right:8px;z-index:1}
   .embedded h1,.embedded #download{display:none}
-  .embedded header button{width:30px;min-width:30px;height:30px;border-radius:9px;border-color:rgba(16,35,43,.1);background:rgba(255,255,255,.85);box-shadow:none;font-size:.95rem}
+  .embedded header button{width:30px;min-width:30px;height:30px;border-radius:var(--radius);border-color:rgba(16,35,43,.1);background:rgba(255,255,255,.85);box-shadow:none;font-size:.95rem}
   .embedded #point-status{grid-row:2;margin:0;padding:0 12px 9px;color:#6b7b80;font-size:.72rem}
   .embedded #point-scene{grid-row:1;border-radius:0}
 </style>

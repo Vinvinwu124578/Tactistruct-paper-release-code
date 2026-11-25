@@ -1,17 +1,17 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tacflow | Tactile point cloud</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#fff;color:#10232b;font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#1c1c1a;font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 main{max-width:1040px;margin:auto;padding:32px 24px}header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}header div{display:flex;gap:8px}
-h1{margin:0;font-size:1.6rem;letter-spacing:-.02em}p{margin:8px 0 16px;color:#5f6f76;font-size:.9rem}canvas{display:block;width:100%;height:min(64vh,600px);background:#f2f7f6;border-radius:16px;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
-a,button{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 14px;font:inherit;font-size:.86rem;font-weight:600;color:#0f6b6e;background:#fff;border:1px solid #d3dbde;border-radius:999px;text-decoration:none;cursor:pointer;box-shadow:0 1px 2px rgba(16,35,43,.05)}
-a:hover,button:hover{border-color:#0f6b6e}#reset{padding:0;font-size:1.05rem}:focus-visible{outline:2px solid #0f6b6e;outline-offset:2px}
+h1{margin:0;font:400 1.75rem/1.2 "Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","TeX Gyre Pagella",Georgia,serif;letter-spacing:-.01em}p{margin:8px 0 16px;color:#6e6c66;font-size:.9rem}canvas{display:block;width:100%;height:min(64vh,600px);background:#f2f7f6;border-radius:10px;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
+a,button{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 14px;font:inherit;font-size:.86rem;font-weight:600;color:#1c1c1a;background:#fff;border:1px solid #d2cfc7;border-radius:6px;text-decoration:none;cursor:pointer;box-shadow:0 1px 2px rgba(16,35,43,.05)}
+a:hover,button:hover{border-color:#1c1c1a}#reset{padding:0;font-size:1.05rem}:focus-visible{outline:2px solid #1c1c1a;outline-offset:2px}
 footer{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:.86rem}b{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px}
 .embedded,.embedded body{background:#f2f7f6}
 .embedded main{position:relative;height:100vh;width:100%;max-width:none;padding:0;display:grid;grid-template-rows:minmax(0,1fr) auto}
 .embedded header{position:absolute;top:8px;right:8px;z-index:1}
 .embedded h1,.embedded footer,.embedded #download{display:none}
-.embedded #reset{width:30px;min-width:30px;height:30px;border-radius:9px;border-color:rgba(16,35,43,.1);background:rgba(255,255,255,.85);box-shadow:none;font-size:.95rem}
+.embedded #reset{width:30px;min-width:30px;height:30px;border-radius:6px;border-color:rgba(16,35,43,.1);background:rgba(255,255,255,.85);box-shadow:none;font-size:.95rem}
 .embedded p{grid-row:2;margin:0;padding:0 12px 9px;color:#6b7b80;font-size:.72rem}
 .embedded canvas{grid-row:1;height:100%;border-radius:0}
 </style><main><header><h1>Tactile point cloud</h1><div><button id="reset" type="button" title="Reset rotation and zoom" aria-label="Reset view">↺</button> <a id="download" download>Download PLY</a></div></header>
