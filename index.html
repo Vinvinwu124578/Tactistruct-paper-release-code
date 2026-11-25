@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Per-object simulation results for 2,750 tactile reconstructions, with split-level metrics and reference-quality flags.">
+  <meta name="description" content="Tacflow paper results: simulated tactile reconstructions, pose experiments, and real-world TacTip reconstructions.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="styles.css">
-  <title>Tacflow | Simulation gallery</title>
+  <link rel="stylesheet" href="result-sections.css">
+  <title>Tacflow | Paper Results Gallery</title>
   <script src="data.js" defer></script>
   <script src="gallery.js" defer></script>
 </head>
@@ -21,10 +22,14 @@
   <main>
     <section class="intro" aria-labelledby="title">
       <div class="eyebrow">SIMULATED TACTILE RECONSTRUCTION</div>
-      <h1 id="title">Simulation gallery</h1>
+      <h1 id="title">Paper Results Gallery</h1>
       <p class="protocol">B regression, epoch 850 <span>·</span> 1,024 input points <span>·</span> 96³ query grid</p>
     </section>
 
+    <nav class="result-sections" aria-label="Result sections">
+      <a href="./" aria-current="page">Simulation</a>
+      <a href="real-world/">Real-World Experiments</a>
+    </nav>
     <nav class="inputs" aria-label="Tactile input protocol">
       <a href="./" data-input-mode="balanced40" aria-current="page">40 patches<span>1,024 points</span></a>
       <a href="patch4/index.html" data-input-mode="patch4">4 patches<span>1,024 points</span></a>

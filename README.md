@@ -1,4 +1,4 @@
-# Tacflow simulation gallery
+# Tacflow Paper Results Gallery
 
 The static site contains 2,750 simulated tactile inputs and matching reconstructions.
 The checkpoint is B regression, epoch 850. Each case uses 1,024 points from 40 patches.
@@ -14,3 +14,7 @@ The 4-patch and 10-raw-patch protocols each cover the same 2,750 cases.
 They include comparison previews, per-case metrics, and interactive views of
 their saved prediction meshes and exact model-input points. The respective
 asset branches contain only the geometry needed by these on-demand viewers.
+
+The Real-World Experiments section compares original TacTip marker inputs
+with the predicted meshes for four laboratory captures. It publishes rendered
+views only, without raw captures, robot coordinates, or model weights.
