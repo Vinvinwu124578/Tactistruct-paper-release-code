@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Original marker points and predicted meshes from four real-world TacTip captures.">
+  <meta name="description" content="Laboratory photos, original marker points, and predicted meshes for six real-world TacTip captures.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../result-sections.css">
   <link rel="stylesheet" href="real-world.css">
   <title>Tacflow | Real-World Experiments</title>
+  <script src="photos.js" defer></script>
 </head>
 <body>
   <header class="masthead">
@@ -21,51 +22,139 @@
     <section class="intro" aria-labelledby="title">
       <div class="eyebrow">UR5 + TacTip</div>
       <h1 id="title">Real-World Experiments</h1>
-      <p class="protocol">Four laboratory captures <span>&middot;</span> Original marker points <span>&middot;</span> B850</p>
+      <p class="protocol">Six laboratory captures <span>&middot;</span> Original marker points <span>&middot;</span> B850</p>
     </section>
     <nav class="result-sections" aria-label="Result sections">
       <a href="../">Simulation</a>
       <a href="./" aria-current="page">Real-World Experiments</a>
     </nav>
     <section class="real-captures" aria-label="Laboratory captures">
-      <article class="real-capture" aria-labelledby="capture-01">
-        <header><h2 id="capture-01">Capture 01</h2><p>10 touches <span>&middot;</span> 517 points</p></header>
-        <figure>
-          <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
-          <img src="images/capture-01.webp" width="1408" height="512" alt="Ten colored touch patches and the corresponding reconstruction, shown from the same oblique view.">
-        </figure>
-        <details><summary>Reverse view</summary>
-          <img src="images/capture-01-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the touch patches and predicted mesh for capture 01.">
+      <article class="real-capture" aria-labelledby="boat">
+        <header><h2 id="boat">Boat</h2><p>10 touches <span>&middot;</span> 517 points</p></header>
+        <div class="capture-visuals">
+          <figure class="capture-photo">
+            <figcaption>Robot photo</figcaption>
+            <a href="photos/boat-10.webp" aria-label="Open Boat photo">
+              <img src="photos/boat-10.webp" loading="lazy" alt="UR5 with TacTip beside the boat.">
+            </a>
+          </figure>
+          <figure>
+            <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
+            <img src="images/capture-01.webp" width="1408" height="512" alt="Original touch patches and the predicted boat mesh, shown from the same view.">
+          </figure>
+        </div>
+        <details class="reverse-view"><summary>Reverse view</summary>
+          <img src="images/capture-01-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the boat touch patches and predicted mesh.">
+        </details>
+        <details class="capture-photos" data-slug="boat" data-count="10">
+          <summary>Photos (10)</summary>
+          <div class="photo-grid" aria-label="Boat photos"></div>
         </details>
       </article>
-      <article class="real-capture" aria-labelledby="capture-02">
-        <header><h2 id="capture-02">Capture 02</h2><p>8 touches <span>&middot;</span> 376 points</p></header>
-        <figure>
-          <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
-          <img src="images/capture-02.webp" width="1408" height="512" alt="Eight colored touch patches and the corresponding reconstruction, shown from the same oblique view.">
-        </figure>
-        <details><summary>Reverse view</summary>
-          <img src="images/capture-02-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the touch patches and predicted mesh for capture 02.">
+      <article class="real-capture" aria-labelledby="bench">
+        <header><h2 id="bench">Bench</h2><p>8 touches <span>&middot;</span> 376 points</p></header>
+        <div class="capture-visuals">
+          <figure class="capture-photo">
+            <figcaption>Robot photo</figcaption>
+            <a href="photos/bench-01.webp" aria-label="Open Bench photo">
+              <img src="photos/bench-01.webp" loading="lazy" alt="UR5 with TacTip beside the bench.">
+            </a>
+          </figure>
+          <figure>
+            <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
+            <img src="images/capture-02.webp" width="1408" height="512" alt="Original touch patches and the predicted bench mesh, shown from the same view.">
+          </figure>
+        </div>
+        <details class="reverse-view"><summary>Reverse view</summary>
+          <img src="images/capture-02-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the bench touch patches and predicted mesh.">
+        </details>
+        <details class="capture-photos" data-slug="bench" data-count="8">
+          <summary>Photos (8)</summary>
+          <div class="photo-grid" aria-label="Bench photos"></div>
         </details>
       </article>
-      <article class="real-capture" aria-labelledby="capture-03">
-        <header><h2 id="capture-03">Capture 03</h2><p>10 touches <span>&middot;</span> 476 points</p></header>
-        <figure>
-          <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
-          <img src="images/capture-03.webp" width="1408" height="512" alt="Ten colored touch patches and the corresponding reconstruction, shown from the same oblique view.">
-        </figure>
-        <details><summary>Reverse view</summary>
-          <img src="images/capture-03-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the touch patches and predicted mesh for capture 03.">
+      <article class="real-capture" aria-labelledby="chair">
+        <header><h2 id="chair">Chair</h2><p>10 touches <span>&middot;</span> 476 points</p></header>
+        <div class="capture-visuals">
+          <figure class="capture-photo">
+            <figcaption>Robot photo</figcaption>
+            <a href="photos/chair-01.webp" aria-label="Open Chair photo">
+              <img src="photos/chair-01.webp" loading="lazy" alt="UR5 with TacTip beside the chair.">
+            </a>
+          </figure>
+          <figure>
+            <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
+            <img src="images/capture-03.webp" width="1408" height="512" alt="Original touch patches and the predicted chair mesh, shown from the same view.">
+          </figure>
+        </div>
+        <details class="reverse-view"><summary>Reverse view</summary>
+          <img src="images/capture-03-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the chair touch patches and predicted mesh.">
+        </details>
+        <details class="capture-photos" data-slug="chair" data-count="10">
+          <summary>Photos (10)</summary>
+          <div class="photo-grid" aria-label="Chair photos"></div>
         </details>
       </article>
-      <article class="real-capture" aria-labelledby="capture-04">
-        <header><h2 id="capture-04">Capture 04</h2><p>8 touches <span>&middot;</span> 525 points</p></header>
-        <figure>
-          <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
-          <img src="images/capture-04.webp" width="1408" height="512" alt="Eight colored touch patches and the corresponding reconstruction, shown from the same oblique view.">
-        </figure>
-        <details><summary>Reverse view</summary>
-          <img src="images/capture-04-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the touch patches and predicted mesh for capture 04.">
+      <article class="real-capture" aria-labelledby="cabinet">
+        <header><h2 id="cabinet">Cabinet</h2><p>8 touches <span>&middot;</span> 525 points</p></header>
+        <div class="capture-visuals">
+          <figure class="capture-photo">
+            <figcaption>Robot photo</figcaption>
+            <a href="photos/cabinet-06.webp" aria-label="Open Cabinet photo">
+              <img src="photos/cabinet-06.webp" loading="lazy" alt="UR5 with TacTip beside the cabinet.">
+            </a>
+          </figure>
+          <figure>
+            <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
+            <img src="images/capture-04.webp" width="1408" height="512" alt="Original touch patches and the predicted cabinet mesh, shown from the same view.">
+          </figure>
+        </div>
+        <details class="reverse-view"><summary>Reverse view</summary>
+          <img src="images/capture-04-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the cabinet touch patches and predicted mesh.">
+        </details>
+        <details class="capture-photos" data-slug="cabinet" data-count="8">
+          <summary>Photos (8)</summary>
+          <div class="photo-grid" aria-label="Cabinet photos"></div>
+        </details>
+      </article>
+      <article class="real-capture" aria-labelledby="blue-vase">
+        <header><h2 id="blue-vase">Blue vase</h2><p>10 touches <span>&middot;</span> 414 points</p></header>
+        <div class="capture-visuals">
+          <figure class="capture-photo">
+            <figcaption>Setup photo</figcaption>
+            <a href="photos/blue-vase-01.webp" aria-label="Open Blue vase photo">
+              <img src="photos/blue-vase-01.webp" loading="lazy" alt="UR5 with TacTip beside the blue vase.">
+            </a>
+          </figure>
+          <figure>
+            <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
+            <img src="images/blue-vase.webp" width="1408" height="512" alt="Original touch patches and the predicted blue vase mesh, shown from the same view.">
+          </figure>
+        </div>
+        <details class="reverse-view"><summary>Reverse view</summary>
+          <img src="images/blue-vase-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the blue vase touch patches and predicted mesh.">
+        </details>
+      </article>
+      <article class="real-capture" aria-labelledby="black-vase">
+        <header><h2 id="black-vase">Black vase</h2><p>10 touches <span>&middot;</span> 444 points</p></header>
+        <div class="capture-visuals">
+          <figure class="capture-photo">
+            <figcaption>Robot photo</figcaption>
+            <a href="photos/black-vase-03.webp" aria-label="Open Black vase photo">
+              <img src="photos/black-vase-03.webp" loading="lazy" alt="UR5 with TacTip beside the black vase.">
+            </a>
+          </figure>
+          <figure>
+            <figcaption><span>Touch input</span><span>Predicted mesh</span></figcaption>
+            <img src="images/black-vase.webp" width="1408" height="512" alt="Original touch patches and the predicted black vase mesh, shown from the same view.">
+          </figure>
+        </div>
+        <details class="reverse-view"><summary>Reverse view</summary>
+          <img src="images/black-vase-reverse.webp" width="1408" height="512" loading="lazy" alt="Reverse view of the black vase touch patches and predicted mesh.">
+        </details>
+        <details class="capture-photos" data-slug="black-vase" data-count="10">
+          <summary>Photos (10)</summary>
+          <div class="photo-grid" aria-label="Black vase photos"></div>
         </details>
       </article>
     </section>

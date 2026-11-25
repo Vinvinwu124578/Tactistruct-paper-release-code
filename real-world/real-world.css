@@ -22,6 +22,11 @@
 .real-capture h2 { font: 600 1.42rem/1.25 var(--serif); }
 .real-capture header p { color: var(--muted); font-size: .85rem; }
 .real-capture header p span { margin-inline: 3px; }
+.capture-visuals {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 6px;
+}
 .real-capture figure { margin: 0; }
 .real-capture figcaption {
   display: grid;
@@ -44,9 +49,30 @@
 .real-capture details { padding-top: 8px; color: var(--ink-2); font-size: .86rem; }
 .real-capture summary { width: fit-content; padding: 4px 2px; cursor: pointer; }
 .real-capture details img { margin-top: 6px; border-radius: 6px; }
+.real-capture .capture-photo figcaption { display: block; }
+.capture-photo a { display: block; }
+.capture-photo img {
+  aspect-ratio: 11 / 8;
+  object-fit: cover;
+  object-position: center 62%;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+}
+.real-capture .photo-grid img {
+  margin-top: 0;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 58%;
+}
 @media (max-width: 820px) {
   .real-captures { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
   .real-page h1 { font-size: 2.45rem; }
+  .real-capture figcaption { font-size: .72rem; }
+  .photo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }

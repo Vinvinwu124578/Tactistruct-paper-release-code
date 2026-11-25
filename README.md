@@ -15,6 +15,6 @@ They include comparison previews, per-case metrics, and interactive views of
 their saved prediction meshes and exact model-input points. The respective
 asset branches contain only the geometry needed by these on-demand viewers.
 
-The Real-World Experiments section compares original TacTip marker inputs
-with the predicted meshes for four laboratory captures. It publishes rendered
-views only, without raw captures, robot coordinates, or model weights.
+The Real-World Experiments section shows laboratory photos, original TacTip
+marker inputs, and predicted meshes for six captures. It publishes photos
+and rendered views without raw tactile archives, robot coordinates, or model weights.
