@@ -300,9 +300,6 @@ async function main() {
   picker.onchange=()=>{if (picker.value) {id=picker.value;show();}};
   for (const button of angles) button.onclick=()=>{degrees=Number(button.dataset.angle);show();};
   for (const button of modeButtons) button.onclick=()=>{mode=button.dataset.mode;show();};
-  document.querySelector('#open-reference-issue').onclick=()=>{
-    id=catalog.flagged_case; query.value=''; fillPicker(); show();
-  };
   await show();
 }
 

@@ -36,7 +36,6 @@ function metricsForSplit() {
     ['Dataset splits',Object.keys(splits).length],['Flagged references',cases.filter(item=>item.referenceIssue).length]
   ];
   el('summary').replaceChildren(...stats.map(([a,b])=>metricPair(a,b)));
-  el('anomaly-banner').hidden=!anomaly || !['test','all'].includes(state.split);
 }
 
 function syncUrl(item) {
@@ -165,7 +164,6 @@ for(const f of [search,category,sort]) f.addEventListener(f===search?'input':'ch
 for(const [id,step] of [['prev',-1],['next',1]]) el(id).addEventListener('click',()=>{
   state.page+=step;show();el('results-title').scrollIntoView({block:'start'});
 });
-el('open-anomaly').addEventListener('click',()=>openCase(byId.get(anomaly)));
 dialog.addEventListener('close',()=>syncUrl());
 splitTo(state.split);
 if (byId.has(query.get('case'))) openCase(byId.get(query.get('case')));

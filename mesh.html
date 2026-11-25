@@ -6,17 +6,21 @@
 <title>Tacflow | Reconstructed mesh</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  .mesh-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:18px 0 10px}
-  .mesh-head h1{font-size:1.55rem;margin-right:auto}
-  .mesh-head button,.mesh-head a{font:inherit;border:1px solid #afc0c1;border-radius:5px;background:#fff;color:#1c5d60;padding:5px 10px;text-decoration:none}
-  #mesh-scene{width:100%;height:min(70vh,760px);background:#f2f7f6;margin-top:12px;display:block;touch-action:none;cursor:grab}
-  #mesh-status{color:#51636a}
-  .embedded main{width:100%;padding:8px;display:grid;height:100vh;grid-template-rows:auto auto minmax(0,1fr);gap:4px}
-  .embedded .mesh-head{margin:0;justify-content:flex-end}
-  .embedded .mesh-head h1{display:none}
-  .embedded #mesh-status{font-size:.75rem;margin:2px 0}
-  .embedded #input-link{display:none}
-  .embedded #mesh-scene{height:100%;margin:0}
+  .mesh-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:32px 0 8px}
+  .mesh-head h1{margin:0 auto 0 0;font-size:1.6rem;letter-spacing:-.02em}
+  .mesh-head button,.mesh-head a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 14px;border:1px solid var(--line-strong);border-radius:999px;background:#fff;color:var(--teal);font-size:.86rem;font-weight:600;text-decoration:none;box-shadow:var(--shadow-sm)}
+  .mesh-head button{padding:0;font-size:1.05rem}
+  .mesh-head button:hover,.mesh-head a:hover{border-color:var(--teal)}
+  #mesh-scene{width:100%;height:min(70vh,760px);background:var(--wash);border-radius:16px;margin-top:14px;display:block;touch-action:none;cursor:grab}
+  #mesh-scene:active{cursor:grabbing}
+  #mesh-status{color:var(--muted);font-size:.9rem}
+  html.embedded,.embedded body{background:var(--wash)}
+  .embedded main{position:relative;width:100%;height:100vh;padding:0;display:grid;grid-template-rows:minmax(0,1fr) auto}
+  .embedded .mesh-head{position:absolute;top:8px;right:8px;z-index:1;margin:0}
+  .embedded .mesh-head h1,.embedded #input-link{display:none}
+  .embedded .mesh-head button{width:30px;min-width:30px;height:30px;border-radius:9px;border-color:rgba(16,35,43,.1);background:rgba(255,255,255,.85);box-shadow:none;font-size:.95rem}
+  .embedded #mesh-status{grid-row:2;margin:0;padding:0 12px 9px;color:#6b7b80;font-size:.72rem}
+  .embedded #mesh-scene{grid-row:1;height:100%;margin:0;border-radius:0}
 </style>
 <main>
   <div class="mesh-head">

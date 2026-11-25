@@ -36,7 +36,6 @@ function metricsForSplit() {
     ['Dataset splits',3],['Flagged references',cases.filter(item=>item.referenceIssue).length]
   ];
   el('summary').replaceChildren(...stats.map(([a,b])=>metricPair(a,b)));
-  el('anomaly-banner').hidden=!['test','all'].includes(state.split);
 }
 
 function syncUrl(item) {
@@ -157,7 +156,6 @@ for(const f of [search,category,sort]) f.addEventListener(f===search?'input':'ch
 for(const [id,step] of [['prev',-1],['next',1]]) el(id).addEventListener('click',()=>{
   state.page+=step;show();el('results-title').scrollIntoView({block:'start'});
 });
-el('open-anomaly').addEventListener('click',()=>openCase(byId.get(anomaly)));
 dialog.addEventListener('close',()=>{
   for(const id of ['inline-points','inline-mesh'])el(id).removeAttribute('src');
   syncUrl();
